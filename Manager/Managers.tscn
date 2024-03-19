@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://u02xv1ahhhoc"]
+
+[ext_resource type="Script" path="res://Scripts/Input/InputManager/Scripts/InputManager.cs" id="1_tvu62"]
+[ext_resource type="Script" path="res://Scripts/Input/InputReader/Scripts/InputReaderPlayer.cs" id="2_fq7o3"]
+
+[node name="Managers" type="Node"]
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("1_tvu62")
+mPlayerInputs = [NodePath("MainInput")]
+
+[node name="MainInput" type="Node" parent="InputManager"]
+script = ExtResource("2_fq7o3")
+mPlayerID = 1
+mButtons = PackedStringArray("Up", "Down", "Left", "Right", "Next", "Back")

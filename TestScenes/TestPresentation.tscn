@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvld8ioew4eq3"]
+
+[ext_resource type="Script" path="res://Scripts/Presentation/PresentationManager.cs" id="1_l5u6t"]
+[ext_resource type="PackedScene" uid="uid://u02xv1ahhhoc" path="res://Manager/Managers.tscn" id="2_oihha"]
+
+[node name="TestPresentation" type="Node"]
+script = ExtResource("1_l5u6t")
+mSlidesPaths = PackedStringArray("res://TestScenes/Test01/Test01.tscn", "res://TestScenes/Test02/Test02.tscn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Managers" parent="." instance=ExtResource("2_oihha")]

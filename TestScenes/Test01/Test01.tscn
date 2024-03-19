@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://d5rls417bk6w"]
+
+[ext_resource type="Texture2D" uid="uid://swkx5b8kckaf" path="res://icon.svg" id="1_6ivh0"]
+[ext_resource type="Script" path="res://Scripts/Presentation/PresentationSlide.cs" id="1_lw865"]
+[ext_resource type="Script" path="res://Scripts/Presentation/BulletPoint.cs" id="3_jumbg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lw865")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 5.0
+offset_right = 705.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 60
+text = "Title One"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 218.0
+offset_right = 314.0
+offset_bottom = 363.0
+texture = ExtResource("1_6ivh0")
+script = ExtResource("3_jumbg")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 397.0
+offset_right = 307.0
+offset_bottom = 542.0
+texture = ExtResource("1_6ivh0")
+script = ExtResource("3_jumbg")

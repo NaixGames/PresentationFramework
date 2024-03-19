@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs7uayn0dg3r8"]
+
+[ext_resource type="Script" path="res://Scripts/Presentation/PresentationSlide.cs" id="1_knjlt"]
+[ext_resource type="Texture2D" uid="uid://swkx5b8kckaf" path="res://icon.svg" id="2_u7ahb"]
+[ext_resource type="Script" path="res://Scripts/Presentation/BulletPoint.cs" id="3_i38nn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_knjlt")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 269.0
+offset_top = 5.0
+offset_right = 705.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 60
+text = "Title Two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 135.0
+offset_right = 290.0
+offset_bottom = 280.0
+texture = ExtResource("2_u7ahb")
+script = ExtResource("3_i38nn")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 0
+offset_left = 124.0
+offset_top = 359.0
+offset_right = 294.0
+offset_bottom = 504.0
+texture = ExtResource("2_u7ahb")
+script = ExtResource("3_i38nn")
