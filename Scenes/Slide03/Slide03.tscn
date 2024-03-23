@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://mb3wnwbfh1rj"]
+
+[ext_resource type="Script" path="res://Scripts/Presentation/PresentationSlide.cs" id="1_75p67"]
+[ext_resource type="Theme" uid="uid://vghx46flo780" path="res://Assets/MainTheme.tres" id="2_h0gve"]
+[ext_resource type="Script" path="res://Scripts/Presentation/BulletPoint.cs" id="3_g1qp7"]
+[ext_resource type="Texture2D" uid="uid://b2jw8kreh0ysp" path="res://Assets/obama-medal-meme.jpg" id="3_nd0ut"]
+[ext_resource type="Texture2D" uid="uid://cid3t0pl30wwe" path="res://Assets/playtonic.jpg" id="4_1hv7y"]
+
+[node name="Slide03" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_75p67")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 960.0
+offset_bottom = 50.0
+theme = ExtResource("2_h0gve")
+theme_override_font_sizes/font_size = 40
+text = "Por que escucharme?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Label"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 50.0
+offset_right = 1415.0
+offset_bottom = 677.0
+scale = Vector2(0.186187, 0.186187)
+texture = ExtResource("3_nd0ut")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 184.0
+offset_right = 960.0
+offset_bottom = 247.0
+theme = ExtResource("2_h0gve")
+theme_override_font_sizes/font_size = 30
+text = "Ingeniero, programo de
+ hace 12 años"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_g1qp7")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_top = 261.0
+offset_right = 960.0
+offset_bottom = 324.0
+theme = ExtResource("2_h0gve")
+theme_override_font_sizes/font_size = 30
+text = "PhD en Estadistica
+(aun que hice matematicas)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_g1qp7")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_top = 346.0
+offset_right = 960.0
+offset_bottom = 409.0
+theme = ExtResource("2_h0gve")
+theme_override_font_sizes/font_size = 30
+text = "Programador en Playtonic
+ hace año y medio"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_g1qp7")
+
+[node name="TextureRect" type="TextureRect" parent="Label4"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 66.0
+offset_right = 1418.0
+offset_bottom = 642.0
+scale = Vector2(0.212685, 0.212685)
+texture = ExtResource("4_1hv7y")

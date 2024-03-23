@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://ct2ngj32wb5ug"]
+
+[ext_resource type="Script" path="res://Scripts/Presentation/PresentationSlide.cs" id="1_d342o"]
+[ext_resource type="Theme" uid="uid://vghx46flo780" path="res://Assets/MainTheme.tres" id="2_ore7o"]
+[ext_resource type="Script" path="res://Scripts/Presentation/BulletPoint.cs" id="3_1nbww"]
+[ext_resource type="Texture2D" uid="uid://cenq6rcobo8iy" path="res://Assets/robot.jpg" id="4_kdlmf"]
+[ext_resource type="Script" path="res://Scripts/Actors/SimpleMovingActor.cs" id="5_dxdjd"]
+
+[sub_resource type="Animation" id="Animation_ume77"]
+resource_name = "Hover"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(0.6, 0.6, 0.6, 0.6),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, -10), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1pkm"]
+_data = {
+"Hover": SubResource("Animation_ume77")
+}
+
+[node name="Slide04" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d342o")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 960.0
+offset_bottom = 50.0
+theme = ExtResource("2_ore7o")
+theme_override_font_sizes/font_size = 40
+text = "... Pero por que!?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 113.0
+offset_right = 960.0
+offset_bottom = 153.0
+theme = ExtResource("2_ore7o")
+theme_override_font_sizes/font_size = 30
+text = "Software tradicial muy robotico"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_1nbww")
+
+[node name="TextureRect" type="TextureRect" parent="Label2"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 49.0
+offset_right = 847.0
+offset_bottom = 707.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_kdlmf")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_top = 355.0
+offset_right = 960.0
+offset_bottom = 395.0
+theme = ExtResource("2_ore7o")
+theme_override_font_sizes/font_size = 30
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_1nbww")
+
+[node name="Label4" type="Label" parent="Label3"]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 40.0
+theme = ExtResource("2_ore7o")
+theme_override_font_sizes/font_size = 30
+text = "Poder de Animacion
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label3"]
+libraries = {
+"": SubResource("AnimationLibrary_k1pkm")
+}
+autoplay = "Hover"
+next/Hover = &"Hover"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_top = 355.0
+offset_right = 960.0
+offset_bottom = 395.0
+theme = ExtResource("2_ore7o")
+theme_override_font_sizes/font_size = 30
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_1nbww")
+
+[node name="Label4" type="Label" parent="Label4"]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 960.0
+offset_bottom = 125.0
+theme = ExtResource("2_ore7o")
+theme_override_font_sizes/font_size = 30
+text = "Poder de Control
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_dxdjd")
+mMovingSpeed = 300.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label4"]
+libraries = {
+"": SubResource("AnimationLibrary_k1pkm")
+}

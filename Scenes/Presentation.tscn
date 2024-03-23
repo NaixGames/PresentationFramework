@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://nc2kmp4owsg2"]
+
+[ext_resource type="Script" path="res://Scripts/Presentation/PresentationManager.cs" id="1_c4byp"]
+
+[node name="Presentation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c4byp")
+mInitialSlide = 2
+mSlidesPaths = PackedStringArray("res://Scenes/Slide01/Slide01.tscn", "res://Scenes/Slide02/Slide02.tscn", "res://Scenes/Slide03/Slide03.tscn", "res://Scenes/Slide04/Slide04.tscn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

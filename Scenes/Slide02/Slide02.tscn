@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh7mvw6bq3qs8"]
+
+[ext_resource type="Script" path="res://Scripts/Presentation/PresentationSlide.cs" id="1_b2mmw"]
+[ext_resource type="Theme" uid="uid://vghx46flo780" path="res://Assets/MainTheme.tres" id="2_vfeo6"]
+[ext_resource type="Script" path="res://Scripts/Presentation/BulletPoint.cs" id="3_d4xtc"]
+
+[node name="Slide02" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b2mmw")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 960.0
+offset_bottom = 50.0
+theme = ExtResource("2_vfeo6")
+theme_override_font_sizes/font_size = 40
+text = "Que se hablara?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 151.0
+offset_right = 960.0
+offset_bottom = 191.0
+theme = ExtResource("2_vfeo6")
+theme_override_font_sizes/font_size = 30
+text = "Como hice un framework 
+de presentaciones en Godot."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_d4xtc")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_top = 267.0
+offset_right = 960.0
+offset_bottom = 330.0
+theme = ExtResource("2_vfeo6")
+theme_override_font_sizes/font_size = 30
+text = "Como funciona en terminos
+ de alto nivel"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_d4xtc")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_top = 379.0
+offset_right = 960.0
+offset_bottom = 442.0
+theme = ExtResource("2_vfeo6")
+theme_override_font_sizes/font_size = 30
+text = "Algunos detalles de 
+implementacion"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_d4xtc")
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_top = 468.0
+offset_right = 960.0
+offset_bottom = 531.0
+theme = ExtResource("2_vfeo6")
+theme_override_font_sizes/font_size = 30
+text = "Que se podria cambiar/mejorar."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_d4xtc")
