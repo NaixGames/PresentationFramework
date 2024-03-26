@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://8c2jklkwto6v"]
+
+[ext_resource type="Script" path="res://Scripts/Presentation/PresentationSlide.cs" id="1_cy20g"]
+[ext_resource type="Theme" uid="uid://vghx46flo780" path="res://Assets/MainTheme.tres" id="2_vpgjb"]
+[ext_resource type="Script" path="res://Scripts/Presentation/BulletPoint.cs" id="3_jhnp2"]
+[ext_resource type="Texture2D" uid="uid://dctpwh6wicnqq" path="res://Assets/PresentationSystem.png" id="4_jcvsu"]
+
+[node name="Slide05" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cy20g")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 960.0
+offset_bottom = 50.0
+theme = ExtResource("2_vpgjb")
+theme_override_font_sizes/font_size = 40
+text = "Como funciona?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 51.0
+offset_right = 960.0
+offset_bottom = 180.0
+theme = ExtResource("2_vpgjb")
+theme_override_font_sizes/font_size = 30
+text = "3 clases: 
+PresentationManager
+PresentationSlide
+BulletPoint
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_jhnp2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 183.0
+offset_right = 855.0
+offset_bottom = 542.0
+texture = ExtResource("4_jcvsu")
+expand_mode = 1
+script = ExtResource("3_jhnp2")

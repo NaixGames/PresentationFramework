@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgt7yd6gvttwq"]
+
+[ext_resource type="Script" path="res://Scripts/Presentation/PresentationSlide.cs" id="1_2rph7"]
+[ext_resource type="Theme" uid="uid://vghx46flo780" path="res://Assets/MainTheme.tres" id="2_0wa6s"]
+[ext_resource type="Script" path="res://Scripts/Presentation/BulletPoint.cs" id="3_oe27b"]
+
+[node name="Slide06" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2rph7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 960.0
+offset_bottom = 50.0
+theme = ExtResource("2_0wa6s")
+theme_override_font_sizes/font_size = 40
+text = "Como funciona?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 90.0
+offset_right = 960.0
+offset_bottom = 170.0
+theme = ExtResource("2_0wa6s")
+theme_override_font_sizes/font_size = 30
+text = "SlideManager maneja inputs
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_oe27b")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_top = 173.0
+offset_right = 960.0
+offset_bottom = 253.0
+theme = ExtResource("2_0wa6s")
+theme_override_font_sizes/font_size = 30
+text = "Al recibir \"next\":
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_oe27b")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_top = 272.0
+offset_right = 960.0
+offset_bottom = 352.0
+theme = ExtResource("2_0wa6s")
+theme_override_font_sizes/font_size = 30
+text = "Si hay un BulletPoint 
+-> Activarlo"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_oe27b")
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_top = 372.0
+offset_right = 960.0
+offset_bottom = 452.0
+theme = ExtResource("2_0wa6s")
+theme_override_font_sizes/font_size = 30
+text = "Si no hay un BulletPoint 
+-> Pedir la siguiente Slide"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_oe27b")
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_top = 458.0
+offset_right = 960.0
+offset_bottom = 538.0
+theme = ExtResource("2_0wa6s")
+theme_override_font_sizes/font_size = 30
+text = "Recibir \"back\" funciona similar"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_oe27b")

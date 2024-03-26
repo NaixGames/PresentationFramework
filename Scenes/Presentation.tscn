@@ -7,11 +7,14 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 1.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c4byp")
-mInitialSlide = 2
-mSlidesPaths = PackedStringArray("res://Scenes/Slide01/Slide01.tscn", "res://Scenes/Slide02/Slide02.tscn", "res://Scenes/Slide03/Slide03.tscn", "res://Scenes/Slide04/Slide04.tscn")
+mSlidesPaths = PackedStringArray("res://Scenes/Slide01/Slide01.tscn", "res://Scenes/Slide02/Slide02.tscn", "res://Scenes/Slide03/Slide03.tscn", "res://Scenes/Slide04/Slide04.tscn", "res://Scenes/Slide05/Slide05.tscn", "res://Scenes/Slide06/Slide06.tscn", "res://Scenes/Slide08/Slide08.tscn", "res://Scenes/Slide09/Slide09.tscn", "res://Scenes/Slide10/Slid10.tscn", "res://Scenes/Slide07/Slide07.tscn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
