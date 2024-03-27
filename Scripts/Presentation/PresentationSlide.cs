@@ -6,7 +6,6 @@ using CoreCode.Scripts;
 namespace PresentationFramework{
 	public partial class PresentationSlide : Node, IControlableByInput
 	{
-		private PresentationManager mPresentationManager;
 		private InputReaderAbstract mInput;
 		private List<BulletPoint> mBulletPoints = new List<BulletPoint>();
 		private int mBulletPointIndex = 0;
@@ -14,7 +13,7 @@ namespace PresentationFramework{
 		// --------------------------------------------------------------------
 
 		// Called when the node enters the scene tree for the first time.
-		public void Initiate(PresentationManager presentationManager)
+		public void Initiate()
 		{
 			foreach (Node node in this.GetChildren(false)){
 				if (node is BulletPoint){
@@ -24,8 +23,6 @@ namespace PresentationFramework{
 			}
 
 			mInput = InputManager.Instance.GiveInputByPlayerChannel(this, 0);
-
-			mPresentationManager = presentationManager;
 		}
 
 		// --------------------------------------------------------------------
@@ -43,7 +40,7 @@ namespace PresentationFramework{
 					mBulletPointIndex ++;
 					return;
 				}
-				mPresentationManager.LoadNextSlide();
+				EmitSignal(SignalName.NextSlideRequest);
 			}
 			if (mInput.IsButtonJustPressedInput("Back")){
 				if (mBulletPointIndex == mBulletPoints.Count){
@@ -55,9 +52,17 @@ namespace PresentationFramework{
 					mBulletPointIndex --;
 					return;
 				}
-				mPresentationManager.LoadPreviousSlide();
+				EmitSignal(SignalName.PriorSlideRequest);
 			}
 		}
+
+
+		[Signal]
+		public delegate void NextSlideRequestEventHandler();
+
+		[Signal]
+		public delegate void PriorSlideRequestEventHandler();
+
 
 		// --------------------------------------------------------------------
 

@@ -23,7 +23,10 @@ namespace PresentationFramework{
 			
 			this.AddChild(mActualSlide);
 			PresentationSlide slide = (PresentationSlide) mActualSlide;
-			slide.Initiate(this);
+			slide.Initiate();
+
+			slide.NextSlideRequest += LoadNextSlide;
+			slide.PriorSlideRequest += LoadPreviousSlide;
 		}
 
 		// --------------------------------------------------------------------
@@ -32,9 +35,16 @@ namespace PresentationFramework{
 			Node newActualScene = ResourceLoader.Load<PackedScene>(mSlidesPaths[mSlideIndex]).Instantiate(); 
 			
 			PresentationSlide slide = (PresentationSlide) newActualScene;
-			slide.Initiate(this);
+			slide.Initiate();
 			
+			slide.NextSlideRequest += LoadNextSlide;
+			slide.PriorSlideRequest += LoadPreviousSlide;
+
 			mActualSlide.QueueFree();
+			PresentationSlide priorSlide = (PresentationSlide) mActualSlide;
+			priorSlide.NextSlideRequest -= LoadNextSlide;
+			priorSlide.PriorSlideRequest -= LoadPreviousSlide;
+			
 			mActualSlide = newActualScene;
 
 			this.AddChild(mActualSlide);
