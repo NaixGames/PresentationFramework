@@ -4,6 +4,7 @@ using System;
 namespace PresentationFramework{
 	public partial class PresentationManager : Node
 	{
+		[Export] private int mInitialSlide;
 		[Export] private string[] mSlidesPaths;
 		private int mSlideIndex=0;
 		private Node mActualSlide;
@@ -12,10 +13,20 @@ namespace PresentationFramework{
 
 		public override void _Ready()
 		{
-			mActualSlide = ResourceLoader.Load<PackedScene>(mSlidesPaths[0]).Instantiate(); 
+			if (mInitialSlide >= mSlidesPaths.Length){
+				GD.PushWarning("USED INVALID INITIAL SLIDE, DEFAULT TO 0");
+				mInitialSlide = 0;
+			}
+
+			mSlideIndex = mInitialSlide;
+			mActualSlide = ResourceLoader.Load<PackedScene>(mSlidesPaths[mInitialSlide]).Instantiate(); 
+			
 			this.AddChild(mActualSlide);
 			PresentationSlide slide = (PresentationSlide) mActualSlide;
-			slide.Initiate(this);
+			slide.Initiate();
+
+			slide.NextSlideRequest += LoadNextSlide;
+			slide.PriorSlideRequest += LoadPreviousSlide;
 		}
 
 		// --------------------------------------------------------------------
@@ -24,9 +35,16 @@ namespace PresentationFramework{
 			Node newActualScene = ResourceLoader.Load<PackedScene>(mSlidesPaths[mSlideIndex]).Instantiate(); 
 			
 			PresentationSlide slide = (PresentationSlide) newActualScene;
-			slide.Initiate(this);
+			slide.Initiate();
 			
+			slide.NextSlideRequest += LoadNextSlide;
+			slide.PriorSlideRequest += LoadPreviousSlide;
+
 			mActualSlide.QueueFree();
+			PresentationSlide priorSlide = (PresentationSlide) mActualSlide;
+			priorSlide.NextSlideRequest -= LoadNextSlide;
+			priorSlide.PriorSlideRequest -= LoadPreviousSlide;
+			
 			mActualSlide = newActualScene;
 
 			this.AddChild(mActualSlide);
